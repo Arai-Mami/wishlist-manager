@@ -2,15 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.header{
-  display: flex;
 
+.header{
+  background-color: #E8B99F;
+  padding: 15px 30px;
+}
+
+.header__contents{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .header__logo{
   display: flex;
+  align-items: center;
+}
+
+.header__logo__title{
+  font-size: 2rem;
+}
+
+.header__logo__image{
+  width: 300px;
 }
 
 .header__menu{
   display: flex;
+  list-style: none;
 }
+
+.header__menu-item{
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.header__menu-item__link{
+  color: #424141;
+}
+
