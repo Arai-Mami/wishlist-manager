@@ -1,45 +1,51 @@
 // Place all the styles related to the wishes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@mixin max-layout{
+  max-width: 1250px;
+  margin: 0 auto;
+}
 
+@mixin flex{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin flex-space-between{
+  @include flex;
+  justify-content: space-between;
+}
 
 .header{
   background-color: #E8B99F;
   padding: 15px 30px;
 }
 
-.header__contents{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1250px;
-  margin: 0 auto;
+.header-contents{
+  @include flex-space-between()
+  @include max-layout
 }
 
-.header__logo{
-  display: flex;
-  align-items: center;
+.header-logo{
+  @include flex;
 }
 
-.header__logo__title{
-  font-size: 2rem;
-}
-
-.header__logo__image{
+.header-logo__image{
   width: 300px;
 }
 
-.header__menu{
+.header-menu{
   display: flex;
   list-style: none;
 }
 
-.header__menu-item{
+.header-menu__item{
   font-size: 1rem;
   margin-left: 20px;
 }
 
-.header__menu-item__link{
+.header-menu__link{
   color: #424141;
 }
 
