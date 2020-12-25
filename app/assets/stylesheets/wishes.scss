@@ -5,6 +5,16 @@ html{
   font-family: 'M PLUS 1p', sans-serif;
 }
 
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+
 @import "_variables.scss";
 
 
@@ -106,7 +116,36 @@ html{
   text-align: right;
   height: 15px;
   color: $font-color-gray;
+  position: relative;
 }
+
+.nav{
+  position: absolute;
+    text-align: center;
+    top: 20px;
+    right: 0px;
+    width: 100px;
+    -webkit-transition: all .2s ease;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $nav-color;
+}
+
+.nav-item{
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-item__link{
+  color: #fff;
+}
+
+.wish-panel__icon:hover .nav{
+    visibility: visible;
+    opacity: 1;
+
+}
+
 
 .fas{
   font-size: 25px;
@@ -122,3 +161,4 @@ html{
   text-align: right;
   color: $font-color-gray;
 }
+
