@@ -1,6 +1,9 @@
 // Place all the styles related to the wishes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "_variables.scss";
+
+
 @mixin max-layout{
   max-width: 1250px;
   margin: 0 auto;
@@ -18,7 +21,7 @@
 }
 
 .header{
-  background-color: #E8B99F;
+  background-color: $assort-color;
   padding: 15px 30px;
 }
 
@@ -46,6 +49,6 @@
 }
 
 .header-menu__link{
-  color: #424141;
+  color: $font-color-darkgray;
 }
 
