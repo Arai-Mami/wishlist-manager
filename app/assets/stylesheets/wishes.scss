@@ -1,6 +1,10 @@
 // Place all the styles related to the wishes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+html{
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
 @import "_variables.scss";
 
 
@@ -12,7 +16,11 @@
 @mixin flex{
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+@mixin flex-wrap{
+  @include flex;
+  flex-wrap: wrap
 }
 
 @mixin flex-space-between{
@@ -49,6 +57,68 @@
 }
 
 .header-menu__link{
-  color: $font-color-darkgray;
+  color: $font-color-brown;
 }
 
+.main{
+  text-align: center;
+}
+
+.main-btn-area{
+  padding: 10px 0;
+}
+
+.main-btn{
+  display: inline-block;
+  padding: 10px 15px;
+  width: 300px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 10px;
+}
+
+.new-post-btn{
+  background-color: $assort-color;
+  box-shadow: 0 4px $assort-color-dark;
+}
+
+.main-area{
+  background-color: $base-color;
+  padding: 15px 0px;
+  min-height: 100vh;
+}
+
+.whishes-bord{
+  background-color: $base-color;
+  @include flex-wrap;
+  justify-content: space-around;
+}
+
+.wish-panel{
+  width: 30%;
+  background-color: #fff;
+  margin: 15px;
+  padding: 15px 30px;
+}
+
+.wish-panel__icon{
+  text-align: right;
+  height: 15px;
+  color: $font-color-gray;
+}
+
+.fas{
+  font-size: 25px;
+}
+
+.wish-panel__item{
+  text-align: start;
+  margin-bottom: 5px;
+  color: $font-color-brown;;
+}
+
+.wish-panel__deadline{
+  text-align: right;
+  color: $font-color-gray;
+}
