@@ -28,6 +28,7 @@ a{
   align-items: center;
 }
 
+
 @mixin flex-wrap{
   @include flex;
   flex-wrap: wrap
@@ -99,7 +100,7 @@ a{
 
 .main-area{
   background-color: $base-color;
-  padding: 15px 0px;
+  padding: 30px 20px;
   min-height: 100vh;
 }
 
@@ -168,4 +169,65 @@ a{
 
 .contents-box{
   background-color: #fff;
+  max-width: 1000px;
+  border-radius: 25px;
+  padding: 35px 70px 35px 70px;
+  margin: 0 auto;
 }
+
+.contents-box__head{
+  @include flex-space-between;
+
+}
+
+.medium-btn{
+  border-radius: 10px;
+  width: 175px;
+  padding: 10px 15px;
+  background-color: $assort-color;
+  box-shadow: 0 4px $assort-color-dark;
+  color: #fff;
+  font-size: 20px;
+}
+
+.canel{
+  border: solid 3px #969292;
+  background-color: #fff;
+  box-shadow: 0 4px #716E6E;
+  color:  #969292;
+}
+
+.contents-title{
+  display: inline-block;
+  color: $font-color-gray;
+  font-size: 25px;
+}
+
+.contents-box-list{
+  text-align: left;
+  padding-top: 60px;
+}
+
+.flex{
+  @include flex;
+}
+
+.contents-box-list__item{
+  border-bottom: solid 1px $border-color;
+  padding: 10px 0;
+}
+
+.item-title{
+  color: $font-color-brown;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.item-firld{
+  color: $border-color;
+}
+
+.memo-height{
+  height: 200px;
+}
+
