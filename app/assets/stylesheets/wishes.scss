@@ -28,6 +28,7 @@ a{
   align-items: center;
 }
 
+
 @mixin flex-wrap{
   @include flex;
   flex-wrap: wrap
@@ -99,7 +100,7 @@ a{
 
 .main-area{
   background-color: $base-color;
-  padding: 15px 0px;
+  padding: 30px 20px;
   min-height: 100vh;
 }
 
@@ -168,7 +169,7 @@ a{
 
 .contents-box{
   background-color: #fff;
-   max-width: 1000px;
+  max-width: 1000px;
   border-radius: 25px;
   padding: 35px 70px 35px 70px;
   margin: 0 auto;
@@ -185,7 +186,6 @@ a{
   padding: 10px 15px;
   background-color: $assort-color;
   box-shadow: 0 4px $assort-color-dark;
-  border: solid 3px $assort-color;
   color: #fff;
   font-size: 20px;
 }
@@ -217,6 +217,7 @@ a{
   padding: 10px 0;
 }
 
+>>>>>>> cf492f4... 新規投稿画面完成
 .item-title{
   color: $font-color-brown;
   font-size: 20px;
