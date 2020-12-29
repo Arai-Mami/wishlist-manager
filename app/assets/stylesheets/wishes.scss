@@ -43,9 +43,13 @@ a{
   padding: 15px 30px;
 }
 
+.wrapper{
+  @include max-layout
+}
+
 .header-contents{
   @include flex-space-between
-  @include max-layout
+  padding: 0 20px 0 20px;
 }
 
 .header-logo{
@@ -100,15 +104,15 @@ a{
 }
 
 .whishes-bord{
-  background-color: $base-color;
   @include flex-wrap;
+  background-color: $base-color;
   justify-content: space-around;
 }
 
 .wish-panel{
   width: 30%;
   background-color: #fff;
-  margin: 15px;
+  margin: 15px 0 15px 0;
   padding: 15px 30px;
 }
 
@@ -131,12 +135,12 @@ a{
     background-color: $nav-color;
 }
 
-.nav-item{
+.nav__item{
   padding: 5px;
   border-bottom: 1px solid #fff;
 }
 
-.nav-item__link{
+.nav__link{
   color: #fff;
 }
 
