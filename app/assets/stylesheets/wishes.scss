@@ -80,12 +80,12 @@ a{
 }
 
 .main-btn-area{
-  padding: 10px 0;
+  padding: 10px 0 15px 0;
 }
 
 .main-btn{
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   width: 300px;
   text-align: center;
   font-size: 1.3rem;
@@ -96,6 +96,11 @@ a{
 .new-post-btn{
   background-color: $assort-color;
   box-shadow: 0 4px $assort-color-dark;
+}
+
+.complete{
+  background-color: $accent-color;
+  box-shadow: 0 4px $accent-color-dark;
 }
 
 .main-area{
@@ -183,7 +188,7 @@ a{
 .medium-btn{
   border-radius: 10px;
   width: 175px;
-  padding: 10px 15px;
+  padding: 5px 15px;
   background-color: $assort-color;
   box-shadow: 0 4px $assort-color-dark;
   border: solid 3px $assort-color;
@@ -219,7 +224,7 @@ a{
 }
 
 .item-title{
-  color: $font-color-brown;
+  color: $font-color-gray;
   font-size: 20px;
   margin-right: 20px;
 }
@@ -228,7 +233,27 @@ a{
   color: $border-color;
 }
 
+.display{
+  color: $font-color-darkbrown;
+}
+
 .memo-height{
   height: 200px;
+}
+
+.small-btn{
+  background-color: $accent-color;
+  box-shadow: 0 4px $accent-color-dark;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  width: 100px;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.small-step-items{
+  @include flex-space-between;
+  padding: 10px 0;
 }
 
