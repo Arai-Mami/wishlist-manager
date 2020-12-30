@@ -178,11 +178,11 @@ a{
   border-radius: 25px;
   padding: 35px 70px 35px 70px;
   margin: 0 auto;
+  position: relative;
 }
 
 .contents-box__head{
   @include flex-space-between;
-
 }
 
 .medium-btn{
@@ -264,4 +264,21 @@ a{
 
 .dones{
   background-color: #E0D7DB;
+}
+
+.done-head{
+  justify-content: flex-start;
+}
+
+.done-show-title{
+  position: absolute;
+    left: 0;
+    right: 0;
+    top: 45px;
+    bottom :0;
+    margin:  auto;
+}
+
+.done-display{
+  color: $font-color-medium-gray;
 }
