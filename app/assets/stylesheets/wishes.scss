@@ -111,7 +111,6 @@ a{
 
 .whishes-bord{
   @include flex-wrap;
-  background-color: $base-color;
   justify-content: space-around;
 }
 
@@ -120,6 +119,7 @@ a{
   background-color: #fff;
   margin: 15px 0 15px 0;
   padding: 15px 30px;
+  border-radius: 10px;
 }
 
 .wish-panel__icon{
@@ -257,3 +257,11 @@ a{
   padding: 10px 0;
 }
 
+.done-page-title{
+  color: $font-color-medium-gray;
+  font-size: 25px;
+}
+
+.dones{
+  background-color: #E0D7DB;
+}
