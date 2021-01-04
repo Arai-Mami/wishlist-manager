@@ -211,12 +211,19 @@
   color: $font-color-brown;
   font-size: 20px;
   margin-right: 20px;
+  display: block;
+}
+
+::placeholder {
+  color: $border-color;
 }
 
 .item-firld{
-  color: $border-color;
+  color: $font-color-brown;
+  width: 80%;
 }
 
 .memo-height{
   height: 200px;
+  width: 98%;
 }
