@@ -185,21 +185,23 @@ a{
   @include flex-space-between;
 }
 
-.medium-btn{
+
+.medium-btn-link{
   border-radius: 10px;
-  width: 175px;
+  display: block;
   padding: 5px 15px;
-  background-color: $assort-color;
-  border: solid 2px $assort-color;
+  width: 175px;
   color: #fff;
+  border: solid 2px $assort-color;
+  background-color: $assort-color;
   font-size: 20px;
 }
 
-.canel{
+.cancel{
+  padding: 5px 15px;
   background-color: #fff;
   color: $assort-color;
 }
-
 .contents-title{
   display: inline-block;
   color: $font-color-gray;
@@ -222,12 +224,13 @@ a{
 
 .item-title{
   color: $font-color-gray;
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 20px;
 }
 
 .item-firld{
   color: $border-color;
+  font-size: 18px;
 }
 
 .display{
@@ -239,6 +242,7 @@ a{
 }
 
 .small-btn{
+  display: block;
   background-color: $accent-color;
   color: #fff;
   font-size: 18px;
