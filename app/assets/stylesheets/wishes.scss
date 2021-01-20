@@ -190,17 +190,14 @@ a{
   width: 175px;
   padding: 5px 15px;
   background-color: $assort-color;
-  box-shadow: 0 4px $assort-color-dark;
   border: solid 2px $assort-color;
   color: #fff;
   font-size: 20px;
 }
 
 .canel{
-  border: solid 2px #969292;
   background-color: #fff;
-  box-shadow: 0 4px #716E6E;
-  color:  #969292;
+  color: $assort-color;
 }
 
 .contents-title{
@@ -244,7 +241,6 @@ a{
 
 .small-btn{
   background-color: $accent-color;
-  box-shadow: 0 4px $accent-color-dark;
   color: #fff;
   font-size: 18px;
   border-radius: 10px;
