@@ -69,12 +69,12 @@
 }
 
 .main-btn-area{
-  padding: 10px 0;
+  padding: 10px 0 15px 0;
 }
 
 .main-btn{
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   width: 300px;
   text-align: center;
   font-size: 1.3rem;
@@ -85,6 +85,11 @@
 .new-post-btn{
   background-color: $assort-color;
   box-shadow: 0 4px $assort-color-dark;
+}
+
+.complete{
+  background-color: $accent-color;
+  box-shadow: 0 4px $accent-color-dark;
 }
 
 .main-area{
@@ -169,24 +174,23 @@
 
 }
 
-.medium-btn{
+
+.medium-btn-link{
   border-radius: 10px;
+  display: block;
+  padding: 5px 15px;
   width: 175px;
-  padding: 10px 15px;
-  background-color: $assort-color;
-  box-shadow: 0 4px $assort-color-dark;
-  border: solid 3px $assort-color;
   color: #fff;
+  border: solid 2px $assort-color;
+  background-color: $assort-color;
   font-size: 20px;
 }
 
-.canel{
-  border: solid 3px #969292;
+.cancel{
+  padding: 5px 15px;
   background-color: #fff;
-  box-shadow: 0 4px #716E6E;
-  color:  #969292;
+  color: $assort-color;
 }
-
 .contents-title{
   display: inline-block;
   color: $font-color-gray;
@@ -208,8 +212,8 @@
 }
 
 .item-title{
-  color: $font-color-brown;
-  font-size: 20px;
+  color: $font-color-gray;
+  font-size: 18px;
   margin-right: 20px;
   display: block;
 }
@@ -230,9 +234,31 @@
 
 .item-firld{
   color: $border-color;
+  font-size: 18px;
+}
+
+.display{
+  color: $font-color-darkbrown;
 }
 
 .memo-height{
   height: 200px;
+  width: 98%;
+}
+
+.small-btn{
+  display: block;
+  background-color: $accent-color;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  width: 100px;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.small-step-items{
+  @include flex-space-between;
+  padding: 10px 0;
 }
 
