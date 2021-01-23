@@ -100,7 +100,6 @@
 
 .whishes-bord{
   @include flex-wrap;
-  background-color: $base-color;
   justify-content: space-around;
 }
 
@@ -109,6 +108,7 @@
   background-color: #fff;
   margin: 15px 0 15px 0;
   padding: 15px 30px;
+  border-radius: 10px;
 }
 
 .wish-panel__icon{
@@ -167,11 +167,11 @@
   border-radius: 25px;
   padding: 35px 70px 35px 70px;
   margin: 0 auto;
+  position: relative;
 }
 
 .contents-box__head{
   @include flex-space-between;
-
 }
 
 
@@ -262,3 +262,28 @@
   padding: 10px 0;
 }
 
+.done-page-title{
+  color: $font-color-medium-gray;
+  font-size: 25px;
+}
+
+.dones{
+  background-color: #E0D7DB;
+}
+
+.done-head{
+  justify-content: flex-start;
+}
+
+.done-show-title{
+  position: absolute;
+    left: 0;
+    right: 0;
+    top: 45px;
+    bottom :0;
+    margin:  auto;
+}
+
+.done-display{
+  color: $font-color-medium-gray;
+}
