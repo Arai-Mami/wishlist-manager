@@ -287,3 +287,22 @@
 .done-display{
   color: $font-color-medium-gray;
 }
+
+// wishes/done.html.erb
+.link-top-btn{
+  background-color: $assort-color;
+  box-shadow: 0 4px $assort-color-dark;
+}
+
+.done-comment-panel{
+  background-color: #fff;
+  max-width: 600px;
+  padding: 100px;
+  border-radius: 10px;
+  margin: 80px auto;
+}
+
+.done-comment-panel__text{
+  color: $font-color-brown;
+  line-height: 2rem;
+}
