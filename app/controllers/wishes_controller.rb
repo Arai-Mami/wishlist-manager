@@ -1,5 +1,6 @@
 class WishesController < ApplicationController
   def index
+    @wishes= Wish.all
   end
 
   def new
