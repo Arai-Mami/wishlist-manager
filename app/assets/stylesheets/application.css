@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "reset";
+
+ html{
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
