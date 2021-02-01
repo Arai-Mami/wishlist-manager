@@ -7,6 +7,9 @@ class WishesController < ApplicationController
     @wish = Wish.new
   end
 
+  def create
+  end
+
   def show
   end
 end

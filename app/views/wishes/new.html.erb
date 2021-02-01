@@ -24,9 +24,9 @@
     <div class="main-area">
       <div class="contents-box">
         <div class="contents-box__head">
-          <div class="medium-btn canel">キャンセル</div>
+          <a href="#" class="medium-btn-link cancel">キャンセル</a>
           <div class="contents-title">新規wish</div>
-          <div class="medium-btn">登録</div>
+          <a href="#" class="medium-btn-link" id="touroku">登録</a>
         </div>
         
         <div class ="contents-box-list">
@@ -44,7 +44,7 @@
             <%= f.text_area :memo, class: "item-field memo-height", placeholder: "500字以内で書いください" %>
           </div>
           <div class="contents-box-list__item">
-          <%= f.fields_for 'smapp_steps[]', small_step do |i|%>
+          <%= f.fields_for :small_step do |i|%>
             <%= i.label :text, "スモールステップ①", class: "item-title" %>
             <%= i.text_field :text, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
@@ -65,3 +65,9 @@
     </div>
   </div>
 </body>
+
+<script>
+    $document.getElementById("touroku").on("click", function(){       // クラスbtnがクリックされた時
+    document.forms.new_wish.submit();      // mainformをsubmit（送信）する
+  )};
+</script>
