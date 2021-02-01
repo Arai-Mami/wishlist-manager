@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_123644) do
+ActiveRecord::Schema.define(version: 2021_02_01_062723) do
+  create_table "small_steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "text", null: false
+    t.boolean "done", default: false
+    t.bigint "wish_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wish_id"], name: "index_small_steps_on_wish_id"
+  end
 
   create_table "wishes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title", null: false
