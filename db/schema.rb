@@ -11,9 +11,10 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_02_01_062723) do
+
   create_table "small_steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "text", null: false
-    t.boolean "done", default: false
+    t.boolean "done", default: false, null: false
     t.bigint "wish_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_062723) do
     t.string "title", null: false
     t.date "deadline"
     t.text "memo"
-    t.boolean "completed", null: false
+    t.boolean "completed", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

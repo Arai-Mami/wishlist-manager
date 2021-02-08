@@ -4,7 +4,7 @@ class CreateWishes < ActiveRecord::Migration[6.0]
       t.string :title,      null: false
       t.date :deadline
       t.text :memo
-      t.boolean :completed, null: false
+      t.boolean :completed, null: false, default: false
       t.timestamps
     end
   end
