@@ -45,16 +45,16 @@
           </div>
           <div class="contents-box-list__item">
           <%= f.fields_for :small_step do |i|%>
-            <%= i.label :text, "スモールステップ①", class: "item-title" %>
-            <%= i.text_field :text, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
+            <%= i.label :text1, "スモールステップ①", class: "item-title" %>
+            <%= i.text_field :text1, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
           <div class="contents-box-list__item">
-            <%= i.label :text, "スモールステップ②", class: "item-title"%>
-            <%= i.text_field :text, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
+            <%= i.label :text2, "スモールステップ②", class: "item-title"%>
+            <%= i.text_field :text2, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
           <div class="contents-box-list__item">
-            <%= i.label :text, "スモールステッ③", class: "item-title"%>
-            <%= i.text_field :text, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
+            <%= i.label :text3, "スモールステッ③", class: "item-title"%>
+            <%= i.text_field :text3, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
           <% end %>
         <% end %>
