@@ -17,6 +17,11 @@ class WishesController < ApplicationController
   def show
   end
 
+  def destroy
+    wish = Wish.find(params[:id])
+    wish.destroy
+  end
+
   private
   def wish_params
     re_params = params.require(:wish).permit(:title, :memo)
