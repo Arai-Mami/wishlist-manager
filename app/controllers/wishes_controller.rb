@@ -17,6 +17,10 @@ class WishesController < ApplicationController
   def show
   end
 
+  def edit
+    @wish = Wish.find(params[:id])
+  end
+
   def destroy
     wish = Wish.find(params[:id])
     wish.destroy
