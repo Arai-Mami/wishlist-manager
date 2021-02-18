@@ -12,6 +12,7 @@ class WishesController < ApplicationController
     SmallStep.create(text: small_step_params[:text1], wish_id: wish.id) if small_step_params[:text1].present?
     SmallStep.create(text: small_step_params[:text2], wish_id: wish.id) if small_step_params[:text2].present?
     SmallStep.create(text: small_step_params[:text3], wish_id: wish.id) if small_step_params[:text3].present?
+    redirect_to :action => "index"
   end
 
   def show
