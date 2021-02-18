@@ -9,9 +9,11 @@ class WishesController < ApplicationController
 
   def create
     wish = Wish.create(wish_params)
-    SmallStep.create(text: small_step_params[:text1], wish_id: wish.id) if small_step_params[:text1].present?
-    SmallStep.create(text: small_step_params[:text2], wish_id: wish.id) if small_step_params[:text2].present?
-    SmallStep.create(text: small_step_params[:text3], wish_id: wish.id) if small_step_params[:text3].present?
+    small_step_params.each_value{|value|
+    if value != ""
+    SmallStep.create(text: value, wish_id: wish.id)
+    end
+    }
     redirect_to :action => "index"
   end
 
