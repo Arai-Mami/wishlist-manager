@@ -38,6 +38,7 @@
           <div class="contents-box-list__item flex">
             <%= f.label :deadline, "期限", class: "item-title" %>
             <%= f.date_select :deadline, class: "item-field" %>
+            <%# 日付選択は、年/月/日で分けて入力出来るようにしたい。のちのち修正予定。 %>
           </div>
           <div class="contents-box-list__item">
             <%= f.label :memo, "メモ", class: "item-title memo-title" %>
