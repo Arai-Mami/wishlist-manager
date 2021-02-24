@@ -1,0 +1,3 @@
+class SmallStepsController < ApplicationController
+  
+end
