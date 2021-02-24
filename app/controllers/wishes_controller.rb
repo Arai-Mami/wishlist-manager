@@ -23,6 +23,7 @@ class WishesController < ApplicationController
 
   def update
     wish = Wish.find(params[:id])
+    wish = wish.update(wish_params)
     small_steps_ids = []
     small_steps_ids << small_step_update_params[:small_step_id1]
     small_steps_ids << small_step_update_params[:small_step_id2]
@@ -51,7 +52,6 @@ class WishesController < ApplicationController
       SmallStep.create(text: small_step_update_params[:text3], wish_id: wish.id)
       end
     end
-    
 
   end
 
