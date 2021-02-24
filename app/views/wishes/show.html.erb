@@ -56,6 +56,7 @@
               <div class="small-step-items__contents">
                 <%= i.label :text1, "スモールステップ①", class: "item-title" %>
                 <% if @wish.small_steps[0] %>
+                <%=i.hidden_field :small_step_id1, value:@wish.small_steps[0].id%>
                 <%= i.text_field :text1, class: "item-field", value: @wish.small_steps[0].text,placeholder: "例)ペット可の物件を探す" %>
                 <% else %>
                 <%= i.text_field :text2, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
@@ -71,6 +72,7 @@
                 <%= i.label :text2, "スモールステップ②", class: "item-title" %>
                 <% if @wish.small_steps[1] %>
                 <%= i.text_field :text2, class: "item-field", value: @wish.small_steps[1].text,placeholder: "例)ペット可の物件を探す" %>
+                <%=i.hidden_field :small_step_id2, value:@wish.small_steps[1].id%>
                 <% else %>
                 <%= i.text_field :text2, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
                 <% end %>
@@ -85,6 +87,7 @@
                 <%= i.label :text3, "スモールステップ③", class: "item-title" %>
                 <% if @wish.small_steps[2] %>
                 <%= i.text_field :text3, class: "item-field", value: @wish.small_steps[2].text,placeholder: "例)ペット可の物件を探す" %>
+                <%= i.hidden_field :small_step_id3, value:@wish.small_steps[2].id%>
                 <% else %>
                 <%= i.text_field :text3, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
                 <% end %>

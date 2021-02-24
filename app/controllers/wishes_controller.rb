@@ -22,7 +22,37 @@ class WishesController < ApplicationController
   end
 
   def update
-    binding.pry
+    wish = Wish.find(params[:id])
+    small_steps_ids = []
+    small_steps_ids << small_step_update_params[:small_step_id1]
+    small_steps_ids << small_step_update_params[:small_step_id2]
+    small_steps_ids << small_step_update_params[:small_step_id3]
+    
+    if small_steps_ids[0].present?
+      SmallStep.find(small_steps_ids[0]).update(text: small_step_update_params[:text1]) 
+    else
+      if small_step_update_params[:text1] != ""
+        SmallStep.create(text: small_step_update_params[:text1], wish_id: wish.id)
+      end
+    end
+
+    if small_steps_ids[1].present?
+      SmallStep.find(small_steps_ids[1]).update(text: small_step_update_params[:text2]) 
+    else
+      if small_step_update_params[:text2] != ""
+      SmallStep.create(text: small_step_update_params[:text2], wish_id: wish.id)
+      end
+    end
+
+    if small_steps_ids[2].present?
+      SmallStep.find(small_steps_ids[2]).update(text: small_step_update_params[:text3]) 
+    else
+      if small_step_update_params[:text3] != ""
+      SmallStep.create(text: small_step_update_params[:text3], wish_id: wish.id)
+      end
+    end
+    
+
   end
 
   def destroy
@@ -47,5 +77,10 @@ class WishesController < ApplicationController
     small_step_params = small_step_params.require(:small_step).permit(:text1, :text2, :text3)
   end
 
+  def small_step_update_params
+    small_step_params = params.require(:wish).permit(small_step: [:text1,:text2, :text3, :small_step_id1, :small_step_id2, :small_step_id3])
+    # paramsからsmall_stepの情報を取得
+    small_step_params = small_step_params.require(:small_step).permit(:text1, :text2, :text3,:small_step_id1, :small_step_id2, :small_step_id3)
+  end
 
 end
