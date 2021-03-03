@@ -31,32 +31,26 @@ class WishesController < ApplicationController
     small_steps_ids << small_step_update_params[:small_step_id2]
     small_steps_ids << small_step_update_params[:small_step_id3]
     
-    if small_steps_ids[0].present?
+    if SmallStep.exists?(small_steps_ids[0])
       SmallStep.find(small_steps_ids[0]).update(text: small_step_update_params[:text1]) 
     else
-      if small_step_update_params[:text1] != ""
         SmallStep.create(text: small_step_update_params[:text1], wish_id: wish.id)
-      end
     end
 
-    if small_steps_ids[1].present?
+
+    if SmallStep.exists?(small_steps_ids[1])
       SmallStep.find(small_steps_ids[1]).update(text: small_step_update_params[:text2]) 
     else
-      if small_step_update_params[:text2] != ""
       SmallStep.create(text: small_step_update_params[:text2], wish_id: wish.id)
-      end
     end
 
-    if small_steps_ids[2].present?
+    if SmallStep.exists?(small_steps_ids[2])
       SmallStep.find(small_steps_ids[2]).update(text: small_step_update_params[:text3]) 
     else
-      if small_step_update_params[:text3] != ""
       SmallStep.create(text: small_step_update_params[:text3], wish_id: wish.id)
-      end
     end
 
     redirect_to wish_path(wish)
-
   end
 
   def destroy
