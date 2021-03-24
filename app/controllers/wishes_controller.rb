@@ -10,9 +10,9 @@ class WishesController < ApplicationController
   def create
     wish = Wish.create(wish_params)
     small_step_params.each_value{|value|
-    if value != ""
-    SmallStep.create(text: value, wish_id: wish.id)
-    end
+      if value != ""
+        SmallStep.create(text: value, wish_id: wish.id)
+      end
     }
     redirect_to :action => "index"
   end
