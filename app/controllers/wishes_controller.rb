@@ -72,5 +72,5 @@ class WishesController < ApplicationController
     # paramsからsmall_stepの情報を取得
     small_step_params = small_step_params.require(:small_step).permit(:text1, :text2, :text3,:small_step_id1, :small_step_id2, :small_step_id3)
   end
-
+  #HACK:あとで繰り返し処理にする
 end
