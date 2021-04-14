@@ -42,7 +42,7 @@
           </div>
           <div class="contents-box-list__item flex">
             <%= f.label :deadline, "期限", class: "item-title" %>
-            <%= f.date_select :deadline, value: @wish.deadline, class: "item-field" %>
+            <%= f.date_field :deadline, value: @wish.deadline, class: "item-field" %>
           </div>
           <div class="contents-box-list__item">
             <%= f.label :memo, "メモ", class: "item-title memo-title" %>
