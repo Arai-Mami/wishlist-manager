@@ -27,29 +27,22 @@ class WishesController < ApplicationController
     wish.update(wish_params)
 
     small_steps_ids = []
+    #small_step_update_paramsのメモ{"text1"=>"繰り返し１", "text2"=>"繰り返し２", "text3"=>"繰り返し３", "small_step_id1"=>"56", "small_step_id2"=>"57", "small_step_id3"=>"58"} 
     small_steps_ids << small_step_update_params[:small_step_id1]
     small_steps_ids << small_step_update_params[:small_step_id2]
     small_steps_ids << small_step_update_params[:small_step_id3]
     
-    if SmallStep.exists?(small_steps_ids[0])
-      SmallStep.find(small_steps_ids[0]).update(text: small_step_update_params[:text1]) 
-    else
-        SmallStep.create(text: small_step_update_params[:text1], wish_id: wish.id)
+    text_num=1
+
+    small_steps_ids.each_with_index do |id,i|
+      key = "text" + text_num.to_s
+      if SmallStep.exists?(small_steps_ids[i])
+        SmallStep.find(small_steps_ids[i]).update(text: small_step_update_params[key.intern]) 
+      else
+          SmallStep.create(text: small_step_update_params[key.intern], wish_id: wish.id)
+      end
+      text_num += 1
     end
-
-
-    if SmallStep.exists?(small_steps_ids[1])
-      SmallStep.find(small_steps_ids[1]).update(text: small_step_update_params[:text2]) 
-    else
-      SmallStep.create(text: small_step_update_params[:text2], wish_id: wish.id)
-    end
-
-    if SmallStep.exists?(small_steps_ids[2])
-      SmallStep.find(small_steps_ids[2]).update(text: small_step_update_params[:text3]) 
-    else
-      SmallStep.create(text: small_step_update_params[:text3], wish_id: wish.id)
-    end
-
     redirect_to wish_path(wish)
   end
 
