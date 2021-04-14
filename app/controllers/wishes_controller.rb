@@ -42,9 +42,9 @@ class WishesController < ApplicationController
     small_steps_ids.each_with_index do |id,i|
       key = "text" + text_num.to_s
       if SmallStep.exists?(small_steps_ids[i])
-        SmallStep.find(small_steps_ids[i]).update(text: small_step_update_params[key.intern]) 
+        SmallStep.find(small_steps_ids[i]).update(text: small_step_update_params[key.to_sym]) 
       else
-          SmallStep.create(text: small_step_update_params[key.intern], wish_id: wish.id)
+          SmallStep.create(text: small_step_update_params[key.to_sym], wish_id: wish.id)
       end
       text_num += 1
     end
