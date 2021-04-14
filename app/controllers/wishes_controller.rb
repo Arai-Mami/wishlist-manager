@@ -22,13 +22,13 @@ class WishesController < ApplicationController
 
   private
   def wish_params
-    re_params = params.require(:wish).permit(:title, :memo)
+    wish_params = params.require(:wish).permit(:title, :memo, :deadline)
     #deadline以外のデータを取得したハッシュを作成
-    date = params.require(:wish).permit(:deadline)
-    deadline = Date.new(date["deadline(1i)"].to_i, date["deadline(2i)"].to_i,  date["deadline(3i)"].to_i)
-    #deadlineのデータをDateクラスに変換
-    re_params.merge(deadline: deadline)
-    #２つのデータを合体し新しいハッシュを生成
+    # date = params.require(:wish).permit(:deadline)
+    # deadline = Date.new(date["deadline(1i)"].to_i, date["deadline(2i)"].to_i,  date["deadline(3i)"].to_i)
+    # #deadlineのデータをDateクラスに変換
+    # re_params.merge(deadline: deadline)
+    # #２つのデータを合体し新しいハッシュを生成
   end
 
   def small_step_params
