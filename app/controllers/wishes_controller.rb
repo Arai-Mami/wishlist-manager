@@ -28,10 +28,15 @@ class WishesController < ApplicationController
 
     small_steps_ids = []
     #small_step_update_paramsのメモ{"text1"=>"繰り返し１", "text2"=>"繰り返し２", "text3"=>"繰り返し３", "small_step_id1"=>"56", "small_step_id2"=>"57", "small_step_id3"=>"58"} 
-    small_steps_ids << small_step_update_params[:small_step_id1]
-    small_steps_ids << small_step_update_params[:small_step_id2]
-    small_steps_ids << small_step_update_params[:small_step_id3]
     
+    num=1
+    3.times do
+      key = "small_step_id"
+      key = key + num.to_s
+      small_steps_ids << small_step_update_params[key.to_sym]
+      num += 1
+    end
+
     text_num=1
 
     small_steps_ids.each_with_index do |id,i|
