@@ -2,77 +2,72 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-
 @import "_variables.scss";
 
-
-@mixin max-layout{
+@mixin max-layout {
   max-width: 1250px;
   margin: 0 auto;
 }
 
-@mixin flex{
+@mixin flex {
   display: flex;
   align-items: center;
 }
 
-
-@mixin flex-wrap{
+@mixin flex-wrap {
   @include flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
-@mixin flex-space-between{
+@mixin flex-space-between {
   @include flex;
   justify-content: space-between;
 }
 
-.header{
+.header {
   background-color: $assort-color;
   padding: 15px 30px;
 }
 
-.wrapper{
-  @include max-layout
+.wrapper {
+  @include max-layout;
 }
 
-.header-contents{
-  @include flex-space-between
-  padding: 0 20px 0 20px;
+.header-contents {
+  @include flex-space-between padding: 0 20px 0 20px;
 }
 
-.header-logo{
+.header-logo {
   @include flex;
 }
 
-.header-logo__image{
+.header-logo__image {
   width: 300px;
 }
 
-.header-menu{
+.header-menu {
   display: flex;
   list-style: none;
 }
 
-.header-menu__item{
+.header-menu__item {
   font-size: 1rem;
   margin-left: 20px;
 }
 
-.header-menu__link{
+.header-menu__link {
   color: $font-color-brown;
 }
 
-.main{
+.main {
   text-align: center;
 }
 
-.main-btn-area{
+.main-btn-area {
   padding: 10px 0 15px 0;
 }
 
-.main-btn{
+.main-btn {
   display: inline-block;
   padding: 5px 15px;
   width: 300px;
@@ -82,28 +77,28 @@
   border-radius: 10px;
 }
 
-.new-post-btn{
+.new-post-btn {
   background-color: $assort-color;
   box-shadow: 0 4px $assort-color-dark;
 }
 
-.complete{
+.complete {
   background-color: $accent-color;
   box-shadow: 0 4px $accent-color-dark;
 }
 
-.main-area{
+.main-area {
   background-color: $base-color;
   padding: 30px 20px;
   min-height: 100vh;
 }
 
-.whishes-bord{
+.whishes-bord {
   @include flex-wrap;
   justify-content: space-around;
 }
 
-.wish-panel{
+.wish-panel {
   width: 30%;
   background-color: #fff;
   margin: 15px 0 15px 0;
@@ -111,57 +106,55 @@
   border-radius: 10px;
 }
 
-.wish-panel__icon{
+.wish-panel__icon {
   text-align: right;
   height: 15px;
   color: $font-color-gray;
   position: relative;
 }
 
-.nav{
+.nav {
   position: absolute;
-    text-align: center;
-    top: 20px;
-    right: 0px;
-    width: 100px;
-    -webkit-transition: all .2s ease;
-    visibility: hidden;
-    opacity: 0;
-    background-color: $nav-color;
+  text-align: center;
+  top: 20px;
+  right: 0px;
+  width: 100px;
+  -webkit-transition: all 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  background-color: $nav-color;
 }
 
-.nav__item{
+.nav__item {
   padding: 5px;
   border-bottom: 1px solid #fff;
 }
 
-.nav__link{
+.nav__link {
   color: #fff;
 }
 
-.wish-panel__icon:hover .nav{
-    visibility: visible;
-    opacity: 1;
-
+.wish-panel__icon:hover .nav {
+  visibility: visible;
+  opacity: 1;
 }
 
-
-.fas{
+.fas {
   font-size: 25px;
 }
 
-.wish-panel__item{
+.wish-panel__item {
   text-align: start;
   margin-bottom: 5px;
-  color: $font-color-brown;;
+  color: $font-color-brown;
 }
 
-.wish-panel__deadline{
+.wish-panel__deadline {
   text-align: right;
   color: $font-color-gray;
 }
 
-.contents-box{
+.contents-box {
   background-color: #fff;
   max-width: 1000px;
   border-radius: 25px;
@@ -170,12 +163,11 @@
   position: relative;
 }
 
-.contents-box__head{
+.contents-box__head {
   @include flex-space-between;
 }
 
-
-.medium-btn-link{
+.medium-btn-link {
   border-radius: 10px;
   display: block;
   padding: 5px 15px;
@@ -186,32 +178,32 @@
   font-size: 20px;
 }
 
-.cancel{
+.cancel {
   padding: 5px 15px;
   background-color: #fff;
   color: $assort-color;
 }
-.contents-title{
+.contents-title {
   display: inline-block;
   color: $font-color-gray;
   font-size: 25px;
 }
 
-.contents-box-list{
+.contents-box-list {
   text-align: left;
   padding-top: 60px;
 }
 
-.flex{
+.flex {
   @include flex;
 }
 
-.contents-box-list__item{
+.contents-box-list__item {
   border-bottom: solid 1px $border-color;
   padding: 10px 0;
 }
 
-.item-title{
+.item-title {
   color: $font-color-gray;
   font-size: 18px;
   margin-right: 20px;
@@ -222,31 +214,31 @@
   color: $border-color;
 }
 
-.item-field{
+.item-field {
   color: $font-color-brown;
   width: 80%;
 }
 
-.memo-height{
+.memo-height {
   height: 200px;
   width: 98%;
 }
 
-.item-firld{
+.item-firld {
   color: $border-color;
   font-size: 18px;
 }
 
-.display{
+.display {
   color: $font-color-darkbrown;
 }
 
-.memo-height{
+.memo-height {
   height: 200px;
   width: 98%;
 }
 
-.small-btn{
+.small-btn {
   display: block;
   background-color: $accent-color;
   color: #fff;
@@ -257,44 +249,44 @@
   text-align: center;
 }
 
-.small-step-items{
+.small-step-items {
   @include flex-space-between;
   padding: 10px 0;
 }
 
-.done-page-title{
+.done-page-title {
   color: $font-color-medium-gray;
   font-size: 25px;
 }
 
-.dones{
-  background-color: #E0D7DB;
+.dones {
+  background-color: #e0d7db;
 }
 
-.done-head{
+.done-head {
   justify-content: flex-start;
 }
 
-.done-show-title{
+.done-show-title {
   position: absolute;
-    left: 0;
-    right: 0;
-    top: 45px;
-    bottom :0;
-    margin:  auto;
+  left: 0;
+  right: 0;
+  top: 45px;
+  bottom: 0;
+  margin: auto;
 }
 
-.done-display{
+.done-display {
   color: $font-color-medium-gray;
 }
 
 // wishes/done.html.erb
-.link-top-btn{
+.link-top-btn {
   background-color: $assort-color;
   box-shadow: 0 4px $assort-color-dark;
 }
 
-.done-comment-panel{
+.done-comment-panel {
   background-color: #fff;
   max-width: 600px;
   padding: 100px;
@@ -302,7 +294,7 @@
   margin: 80px auto;
 }
 
-.done-comment-panel__text{
+.done-comment-panel__text {
   color: $font-color-brown;
   line-height: 2rem;
 }
