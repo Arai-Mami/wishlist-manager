@@ -24,37 +24,42 @@
     <div class="main-area">
       <div class="contents-box">
         <div class="contents-box__head">
-          <div class="medium-btn canel">キャンセル</div>
+          <a href="/" class="medium-btn-link cancel">キャンセル</a>
           <div class="contents-title">新規wish</div>
-          <div class="medium-btn">登録</div>
+          <a href="#" class="medium-btn-link" id="touroku">登録</a>
         </div>
-
-        <form class="contents-box-list">
+        
+        <div class ="contents-box-list">
+        <%= form_for(@wish) do |f| %>
           <div class="contents-box-list__item flex">
-            <label class="item-title">達成したいこと</label>
-            <input  placeholder="例)猫と暮らしたい" class="item-field">
+            <%= f.label :title, "達成したいこと", class: "item-title" %>
+            <%= f.text_field :title, class: "item-field", placeholder: "例)猫と暮らしたい" %>
           </div>
           <div class="contents-box-list__item flex">
-            <label class="item-title">期限</label>
-            <input placeholder="例)20XX/XX/XX" class="item-field">
+            <%= f.label :deadline, "期限", class: "item-title" %>
+            <%= f.date_field :deadline, class: "item-field" %>
+            <%# 日付選択は、年/月/日で分けて入力出来るようにしたい。のちのち修正予定。 %>
           </div>
           <div class="contents-box-list__item">
-            <label class="item-title memo-title">メモ</label>
-            <textarea placeholder="500字以内で書いください" class="item-field memo-height"></textarea>
+            <%= f.label :memo, "メモ", class: "item-title memo-title" %>
+            <%= f.text_area :memo, class: "item-field memo-height", placeholder: "500字以内で書いください" %>
           </div>
           <div class="contents-box-list__item">
-            <label class="item-title">スモールステップ①</label>
-            <input placeholder="例)ペット可の物件を探す" class="item-field">
+          <%= f.fields_for :small_step do |i|%>
+            <%= i.label :text1, "スモールステップ①", class: "item-title" %>
+            <%= i.text_field :text1, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
           <div class="contents-box-list__item">
-            <label class="item-title">スモールステップ①</label>
-            <input placeholder="例)ペット可の物件を探す" class="item-field">
+            <%= i.label :text2, "スモールステップ②", class: "item-title"%>
+            <%= i.text_field :text2, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
           <div class="contents-box-list__item">
-            <label class="item-title">スモールステップ①</label>
-            <input placeholder="例)ペット可の物件を探す" class="item-field">
+            <%= i.label :text3, "スモールステップ③", class: "item-title"%>
+            <%= i.text_field :text3, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
           </div>
-        </form>
+          <% end %>
+        <% end %>
+        </div>
 
 
       </div>

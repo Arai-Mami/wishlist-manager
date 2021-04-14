@@ -23,7 +23,7 @@
   <main class="main">
     
     <div class="main-btn-area">
-      <a class="new-post-btn main-btn">wishリストを追加する</a>
+      <%= link_to "wishリストを追加する", new_wish_path, class: "new-post-btn main-btn"%>
     </div>
 
     <div class="main-area">
@@ -35,6 +35,7 @@
             <ul class="nav">
             <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
             <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
+            <%# リンクは編集/削除機能実装時に編集する %>
             </ul>
           </div>
           <div class="wish-panel__item">
