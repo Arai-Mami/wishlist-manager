@@ -249,7 +249,14 @@
   text-align: center;
 }
 
-.small-btn .done {
+.small-btn__done {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  width: 100px;
+  padding: 5px 15px;
+  text-align: center;
   background-color: $font-color-medium-gray;
 }
 
