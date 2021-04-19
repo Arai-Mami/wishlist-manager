@@ -216,7 +216,7 @@
 
 .item-field {
   color: $font-color-brown;
-  width: 80%;
+  width: 100%;
 }
 
 .memo-height {
@@ -263,6 +263,10 @@
 .small-step-items {
   @include flex-space-between;
   padding: 10px 0;
+}
+
+.small-step-items__contents {
+  width: 80%;
 }
 
 .done-page-title {
