@@ -3,14 +3,14 @@ console.log("Hello world"); // この行が読み込まれた時点で実行さ�
 
 function submitFormWitnButton() {
   if (document.getElementById("new_post") != null) {
-    var btn = document.getElementById("new_post");
+    const btn = document.getElementById("new_post");
     function submitForm() {
       console.log("Hello world");
       document.forms.new_wish.submit();
     }
     btn.addEventListener("click", submitForm);
   } else if (document.getElementById("edit_post") != null) {
-    var btn = document.getElementById("edit_post");
+    const btn = document.getElementById("edit_post");
     function submitForm() {
       document.forms.edit_wish.submit();
     }

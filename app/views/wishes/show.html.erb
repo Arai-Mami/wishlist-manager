@@ -59,7 +59,7 @@
                   <%=i.hidden_field :small_step_id1, value:@wish.small_steps[0].id%>
                 </div>
                  <% if @wish.small_steps[0].done == true %>
-                <%= link_to "達成", small_step_path( @wish.small_steps[0].id),method: :patch, class: "small-btn__done"%>
+                <%= link_to "達成", small_step_path( @wish.small_steps[0].id),method: :patch, class: "small-btn small-btn__done"%>
                 <% else %>
                 <%= link_to "達成", small_step_path( @wish.small_steps[0].id),method: :patch, class: "small-btn"%>
                 <% end %>
@@ -84,7 +84,7 @@
                   <%=i.hidden_field :small_step_id2, value:@wish.small_steps[1].id%>
                 </div>
                 <% if @wish.small_steps[1].done == true %>
-                <%= link_to "達成", small_step_path( @wish.small_steps[1].id),method: :patch, class: "small-btn__done"%>
+                <%= link_to "達成", small_step_path( @wish.small_steps[1].id),method: :patch, class: "small-btn small-btn__done"%>
                 <% else %>
                 <%= link_to "達成", small_step_path( @wish.small_steps[1].id),method: :patch, class: "small-btn"%>
                 <% end %>
@@ -109,7 +109,7 @@
                   <%=i.hidden_field :small_step_id3, value:@wish.small_steps[2].id%>
                 </div>
                 <% if @wish.small_steps[1].done == true %>
-                <%= link_to "達成", small_step_path( @wish.small_steps[2].id),method: :patch, class: "small-btn__done"%>
+                <%= link_to "達成", small_step_path( @wish.small_steps[2].id),method: :patch, class: "small-btn small-btn__done"%>
                 <% else %>
                 <%= link_to "達成", small_step_path( @wish.small_steps[2].id),method: :patch, class: "small-btn"%>
                 <% end %>
