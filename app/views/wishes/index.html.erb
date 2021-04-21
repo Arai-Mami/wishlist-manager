@@ -23,7 +23,7 @@
   <main class="main">
     
     <div class="main-btn-area">
-      <a class="new-post-btn main-btn">wishリストを追加する</a>
+      <%= link_to "wishリストを追加する", new_wish_path, class: "new-post-btn main-btn"%>
     </div>
 
     <div class="main-area">
@@ -33,8 +33,8 @@
           <div class="wish-panel__icon">
             <i class="fas fa-ellipsis-h"></i>
             <ul class="nav">
-            <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
+            <li class="nav__item"><%= link_to "詳細", wish_path(wish) ,class: "nav__link" %>
+            <li class="nav__item"><%= link_to "削除", wish_path(wish), method: :delete, class: "nav__link" %>
             </ul>
           </div>
           <div class="wish-panel__item">
