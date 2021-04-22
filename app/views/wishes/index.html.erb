@@ -1,52 +1,25 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/d18240d4e8.js" crossorigin="anonymous"></script>
-  <title>一覧ページ</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header-contents wrapper">
-      <div class="header-logo">
-        <%= image_tag 'logo.png', class: "header-logo__image"%>
-      </div>
-      <ul class="header-menu">
-        <li class="header-menu__item"><a class="header-menu__link">mami</a></li>
-        <li class="header-menu__item"><a class="header-menu__link">達成済み</a></li>
-      </ul>
-    </div>
-  </header>
-  <main class="main">
-    
-    <div class="main-btn-area">
-      <%= link_to "wishリストを追加する", new_wish_path, class: "new-post-btn main-btn"%>
-    </div>
+<div class="main-btn-area">
+  <%= link_to "wishリストを追加する", new_wish_path, class: "new-post-btn main-btn"%>
+</div>
 
-    <div class="main-area">
-    <div class="whishes-bord wrapper">
-      <% @wishes.each do |wish|%>
-        <div class="wish-panel">
-          <div class="wish-panel__icon">
-            <i class="fas fa-ellipsis-h"></i>
-            <ul class="nav">
-            <li class="nav__item"><%= link_to "詳細", wish_path(wish) ,class: "nav__link" %>
-            <li class="nav__item"><%= link_to "削除", wish_path(wish), method: :delete, class: "nav__link" %>
-            </ul>
-          </div>
-          <div class="wish-panel__item">
-            <%= wish.title %>
-          </div>
-          <div class="wish-panel__deadline">
-            <%= wish.deadline %>
-          </div>
+<div class="main-area">
+  <div class="whishes-bord wrapper">
+    <% @wishes.each do |wish|%>
+      <div class="wish-panel">
+        <div class="wish-panel__icon">
+          <i class="fas fa-ellipsis-h"></i>
+          <ul class="nav">
+          <li class="nav__item"><%= link_to "詳細", wish_path(wish) ,class: "nav__link" %>
+          <li class="nav__item"><%= link_to "削除", wish_path(wish), method: :delete, class: "nav__link" %>
+          </ul>
         </div>
-      <% end %>
-    </div>
-    </div>
-  </main>
-</body>
-</html>
+        <div class="wish-panel__item">
+          <%= wish.title %>
+        </div>
+        <div class="wish-panel__deadline">
+          <%= wish.deadline %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,99 +1,74 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/d18240d4e8.js" crossorigin="anonymous"></script>
-  <title>一覧ページ</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header-contents wrapper">
-      <div class="header-logo">
-        <%= image_tag 'logo.png', class: "header-logo__image"%>
-      </div>
-      <ul class="header-menu">
-        <li class="header-menu__item"><a class="header-menu__link">mami</a></li>
-        <li class="header-menu__item"><a class="header-menu__link">達成済み</a></li>
-      </ul>
+<div class="main-area dones">
+  <div class="contents-box">
+    <div class="contents-box__head done-head">
+      <a class="medium-btn-link">一覧に戻る</a>
+      <div class="contents-title done-show-title">詳細</div>
     </div>
-  </header>
-  <div class="main">
-    <div class="main-area dones">
-      <div class="contents-box">
-        <div class="contents-box__head done-head">
-          <a class="medium-btn-link">一覧に戻る</a>
-          <div class="contents-title done-show-title">詳細</div>
-        </div>
 
-        <ul class="contents-box-list">
-          <li class="contents-box-list__item">
-            <div class="item-title">達成したいこと</div>
-            <div class="item-firld display">猫と暮らしたい</div>
-          </li>
-          <li class="contents-box-list__item">
-            <div class="item-title">期限</div>
-            <div class="item-firld display">20XX/XX/XX</div>
-          </li>
-          <li class="contents-box-list__item memo-height">
-            <div class="list-items">
-              <div class="item-title">
-              メモ
-              </div>
-              <div class="item-firld display">
-              種類はこだわりなし。保護猫を引き取りたい。
-              </div>
+    <ul class="contents-box-list">
+      <li class="contents-box-list__item">
+        <div class="item-title">達成したいこと</div>
+        <div class="item-firld display">猫と暮らしたい</div>
+      </li>
+      <li class="contents-box-list__item">
+        <div class="item-title">期限</div>
+        <div class="item-firld display">20XX/XX/XX</div>
+      </li>
+      <li class="contents-box-list__item memo-height">
+        <div class="list-items">
+          <div class="item-title">
+          メモ
+          </div>
+          <div class="item-firld display">
+          種類はこだわりなし。保護猫を引き取りたい。
+          </div>
+        </div>
+      </li>
+      <li class="contents-box-list__item">
+        <div class="small-step-items">
+          <div class="small-step-items__contents">
+            <div class="item-title">
+            スモールステップ①
             </div>
-          </li>
-          <li class="contents-box-list__item">
-            <div class="small-step-items">
-              <div class="small-step-items__contents">
-                <div class="item-title">
-                スモールステップ①
-                </div>
-                <div class="item-firld display">
-                ペット可の物件を探す
-                </div>
-              </div>
-              <div class="done-display">
-              達成済み
-              </div>
+            <div class="item-firld display">
+            ペット可の物件を探す
             </div>
-          </li>
-          <li class="contents-box-list__item">
-            <div class="small-step-items">
-              <div class="small-step-items__contents">
-                <div class="item-title">
-                スモールステップ②
-                </div>
-                <div class="item-firld display">
-                <br>
-                </div>
-              </div>
-              <div class="done-display">
-              達成済み
-              </div>
+          </div>
+          <div class="done-display">
+          達成済み
+          </div>
+        </div>
+      </li>
+      <li class="contents-box-list__item">
+        <div class="small-step-items">
+          <div class="small-step-items__contents">
+            <div class="item-title">
+            スモールステップ②
             </div>
-          </li>
-          <li class="contents-box-list__item">
-            <div class="small-step-items">
-              <div class="small-step-items__contents">
-                <div class="item-title">
-                スモールステップ③
-                </div>
-                <div class="item-firld display">
-                <br>
-                </div>
-              </div>
-              <div class="done-display">
-              達成済み
-              </div>
+            <div class="item-firld display">
+            <br>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+          </div>
+          <div class="done-display">
+          達成済み
+          </div>
+        </div>
+      </li>
+      <li class="contents-box-list__item">
+        <div class="small-step-items">
+          <div class="small-step-items__contents">
+            <div class="item-title">
+            スモールステップ③
+            </div>
+            <div class="item-firld display">
+            <br>
+            </div>
+          </div>
+          <div class="done-display">
+          達成済み
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
-</body>
+</div>
