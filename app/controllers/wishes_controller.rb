@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
   def index
-    @wishes = Wish.all
+    @wishes = Wish.where(user_id: current_user.id)
   end
 
   def new
@@ -58,7 +58,7 @@ class WishesController < ApplicationController
 
   private
   def wish_params
-    wish_params = params.require(:wish).permit(:title, :memo, :deadline)
+    wish_params = params.require(:wish).permit(:title, :memo, :deadline).merge(user_id: current_user.id)
   end
 
   def small_step_params
