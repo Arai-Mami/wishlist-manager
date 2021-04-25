@@ -221,7 +221,7 @@
 
 .memo-height {
   height: 200px;
-  width: 98%; 
+  width: 98%;
 }
 
 .item-firld {
@@ -305,4 +305,15 @@
 .done-comment-panel__text {
   color: $font-color-brown;
   line-height: 2rem;
+}
+
+.user_name:hover .nav {
+  visibility: visible;
+  opacity: 1;
+}
+
+.user-nav {
+  top: 50px;
+  right: auto;
+  width: 150px;
 }

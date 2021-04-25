@@ -21,8 +21,15 @@
             <%= image_tag 'logo.png', class: "header-logo__image"%>
           </div>
           <ul class="header-menu">
-            <li class="header-menu__item"><a class="header-menu__link">mami</a></li>
+          <% if user_signed_in? %>
+            <li class="header-menu__item user_name"><a class="header-menu__link"><%= current_user.nickname %></a>
+              <ul class="nav user-nav">
+              <li class="nav__item"><%= link_to "ユーザー編集", edit_user_registration_path ,class: "nav__link" %>
+              <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav__link" %>
+              </ul>
+            </li>
             <li class="header-menu__item"><a class="header-menu__link">達成済み</a></li>
+          <% end %>
           </ul>
         </div>
       </header>
