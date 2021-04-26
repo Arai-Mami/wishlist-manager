@@ -24,36 +24,46 @@ class WishesController < ApplicationController
   def update
     wish = Wish.find(params[:id])
     
-    wish.update(wish_params)
+    if wish.user == current_user
+      wish.update(wish_params)
 
-    small_steps_ids = []
-    #small_step_update_paramsのメモ{"text1"=>"繰り返し１", "text2"=>"繰り返し２", "text3"=>"繰り返し３", "small_step_id1"=>"56", "small_step_id2"=>"57", "small_step_id3"=>"58"} 
-    
-    num=1
-    3.times do
-      key = "small_step_id"
-      key = key + num.to_s
-      small_steps_ids << small_step_update_params[key.to_sym]
-      num += 1
-    end
-
-    text_num=1
-
-    small_steps_ids.each_with_index do |id,i|
-      key = "text" + text_num.to_s
-      if SmallStep.exists?(small_steps_ids[i])
-        SmallStep.find(small_steps_ids[i]).update(text: small_step_update_params[key.to_sym]) 
-      else
-          SmallStep.create(text: small_step_update_params[key.to_sym], wish_id: wish.id)
+      small_steps_ids = []
+      #small_step_update_paramsのメモ{"text1"=>"繰り返し１", "text2"=>"繰り返し２", "text3"=>"繰り返し３", "small_step_id1"=>"56", "small_step_id2"=>"57", "small_step_id3"=>"58"} 
+      
+      num=1
+      3.times do
+        key = "small_step_id"
+        key = key + num.to_s
+        small_steps_ids << small_step_update_params[key.to_sym]
+        num += 1
       end
-      text_num += 1
+
+      text_num=1
+
+      small_steps_ids.each_with_index do |id,i|
+        key = "text" + text_num.to_s
+        if SmallStep.exists?(small_steps_ids[i])
+          SmallStep.find(small_steps_ids[i]).update(text: small_step_update_params[key.to_sym]) 
+        else
+            SmallStep.create(text: small_step_update_params[key.to_sym], wish_id: wish.id)
+        end
+        text_num += 1
+      end
+      redirect_to wish_path(wish)
+
+    else
+      redirect_to :action => "index"
     end
-    redirect_to wish_path(wish)
   end
 
   def destroy
     wish = Wish.find(params[:id])
-    wish.destroy
+
+    if wish.user == current_user
+      wish.destroy
+    end
+    
+    redirect_to :action => "index"
   end
 
   private
