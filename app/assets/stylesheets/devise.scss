@@ -1,0 +1,52 @@
+@import "_variables.scss";
+.contents-box-devise {
+  background-color: #fff;
+  max-width: 600px;
+  border-radius: 25px;
+  padding: 50px 70px 50px 70px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.devise-title {
+  font-size: 24px;
+  color: $font-color-gray;
+}
+
+.contents-box-devise form {
+  padding: 40px;
+}
+
+.contents-box-devise .field {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.devise-title-items {
+  display: flex;
+}
+
+.title-supplement {
+  color: $font-color-medium-gray;
+}
+
+.devise-item-field {
+  border-bottom: solid 2px $border-color;
+  width: 100%;
+}
+
+.devise-medium-btn {
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: block;
+  padding: 5px 15px;
+  width: 155px;
+  color: #fff;
+  border: solid 2px $assort-color;
+  background-color: $assort-color;
+}
+
+.user_remember_me {
+  color: $font-color-medium-gray;
+}
