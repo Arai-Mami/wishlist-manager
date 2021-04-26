@@ -1,0 +1,48 @@
+<div class="main-area">
+  <div class="contents-box-devise">
+    <div class="devise-title">ユーザー編集</div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email,"メールアドレス",class:"item-title" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-item-field" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+      <div class="devise-title-items">
+        <%= f.label :password,"新しいパスワード",class:"item-title"%>
+        <% if @minimum_password_length %>
+          <span class="title-supplement">(<%= @minimum_password_length %>文字以上)</span>
+        <% end %>
+      </div>
+        <%= f.password_field :password, autocomplete: "new-password",placeholder:"(変更しない場合は空白にしてください)" ,class: "devise-item-field"%>
+        
+      </div>
+
+      <div class="field">
+        <div class="devise-title-items">
+          <%= f.label :password_confirmation,"新しいパスワード", class:"item-title" %>
+          <span class="title-supplement">(確認)</span>
+        </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class: "devise-item-field"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password,"現在のパスワード",class:"item-title" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "変更するためには現在のパスワード入力が必要です",class: "devise-item-field"%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "更新" , class: "devise-medium-btn"%>
+      </div>
+    <% end %>
+
+　　　<p class="title-supplement">ユーザー登録を削除しますか？</p>
+    <p><%= button_to "ユーザー登録削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,class: "devise-medium-btn red"%></p>
+
+    <%= link_to "戻る", :back , class: "devise-medium-btn cancel"%>

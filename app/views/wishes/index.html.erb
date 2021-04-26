@@ -1,0 +1,25 @@
+<div class="main-btn-area">
+  <%= link_to "wishリストを追加する", new_wish_path, class: "new-post-btn main-btn"%>
+</div>
+
+<div class="main-area">
+  <div class="whishes-bord wrapper">
+    <% @wishes.each do |wish|%>
+      <div class="wish-panel">
+        <div class="wish-panel__icon">
+          <i class="fas fa-ellipsis-h"></i>
+          <ul class="nav">
+          <li class="nav__item"><%= link_to "詳細", wish_path(wish) ,class: "nav__link" %>
+          <li class="nav__item"><%= link_to "削除", wish_path(wish), method: :delete, class: "nav__link" %>
+          </ul>
+        </div>
+        <div class="wish-panel__item">
+          <%= wish.title %>
+        </div>
+        <div class="wish-panel__deadline">
+          <%= wish.deadline %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
