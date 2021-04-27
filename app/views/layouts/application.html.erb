@@ -28,7 +28,7 @@
               <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav__link" %>
               </ul>
             </li>
-            <li class="header-menu__item"><a class="header-menu__link">達成済み</a></li>
+            <li class="header-menu__item"><%= link_to "達成済み", dones_path, class:"header-menu__link"%></li>
           <% end %>
           </ul>
         </div>
