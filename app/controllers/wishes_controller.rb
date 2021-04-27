@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
   def index
-    @wishes = Wish.where(user_id: current_user.id)
+    @wishes = Wish.where(user_id: current_user.id, completed: false)
   end
 
   def new
@@ -67,6 +67,9 @@ class WishesController < ApplicationController
   end
 
   def complete
+    wish=Wish.find(params[:wish_id])
+    wish.completed = true
+    wish.save
   end
 
   private
