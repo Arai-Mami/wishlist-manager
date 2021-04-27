@@ -3,99 +3,23 @@
     </div>
 
     <div class="main-area dones">
-    <div class="whishes-bord wrapper">
-      <div class="wish-panel">
-        <div class="wish-panel__icon">
-          <i class="fas fa-ellipsis-h"></i>
-          <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">詳細</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
-          </ul>
-        </div>
-        <div class="wish-panel__item">
-        〇〇さんの画像を作成する
-        </div>
-        <div class="wish-panel__deadline">
-        2021/1/31
-        </div>
+      <div class="whishes-bord wrapper">
+        <% @wishes.each do |wish| %>
+          <div class="wish-panel">
+            <div class="wish-panel__icon">
+              <i class="fas fa-ellipsis-h"></i>
+              <ul class="nav">
+              <li class="nav__item"><%= link_to "詳細", done_path(wish), class: "nav__link" %></li>
+              <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
+              </ul>
+            </div>
+            <div class="wish-panel__item">
+            <%= wish.title%>
+            </div>
+            <div class="wish-panel__deadline">
+            <%= wish.deadline%>
+            </div>
+          </div>
+        <% end %>
       </div>
-
-      <div class="wish-panel">
-        <div class="wish-panel__icon">
-          <i class="fas fa-ellipsis-h"></i>
-          <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
-          </ul>
-        </div>
-        <div class="wish-panel__item">
-        〇〇さんの画像を作成する
-        </div>
-        <div class="wish-panel__deadline">
-        2021/1/31
-        </div>
-      </div>
-
-      <div class="wish-panel">
-        <div class="wish-panel__icon">
-          <i class="fas fa-ellipsis-h"></i>
-          <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
-          </ul>
-        </div>
-        <div class="wish-panel__item">
-        〇〇さんの画像を作成する
-        </div>
-        <div class="wish-panel__deadline">
-        2021/1/31
-        </div>
-      </div>
-
-      <div class="wish-panel">
-        <div class="wish-panel__icon">
-          <i class="fas fa-ellipsis-h"></i>
-          <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
-          </ul>
-        </div>
-        <div class="wish-panel__item">
-        〇〇さんの画像を作成する
-        </div>
-        <div class="wish-panel__deadline">
-        2021/1/31
-        </div>
-      </div>
-      <div class="wish-panel">
-        <div class="wish-panel__icon">
-          <i class="fas fa-ellipsis-h"></i>
-          <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
-          </ul>
-        </div>
-        <div class="wish-panel__item">
-        〇〇さんの画像を作成する
-        </div>
-        <div class="wish-panel__deadline">
-        2021/1/31
-        </div>
-      </div>
-      <div class="wish-panel">
-        <div class="wish-panel__icon">
-          <i class="fas fa-ellipsis-h"></i>
-          <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">編集</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
-          </ul>
-        </div>
-        <div class="wish-panel__item">
-        〇〇さんの画像を作成する
-        </div>
-        <div class="wish-panel__deadline">
-        2021/1/31
-        </div>
-      </div>
-    </div>
     </div>
