@@ -1,97 +1,108 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/d18240d4e8.js" crossorigin="anonymous"></script>
-  <title>一覧ページ</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header-contents wrapper">
-      <div class="header-logo">
-        <%= image_tag 'logo.png', class: "header-logo__image"%>
+
+<div class="main-btn-area">
+  <%= link_to "達成", wish_complete_path(@wish), class: "main-btn complete " %>
+</div>
+<div class="main-area">
+  <div class="contents-box">
+    <div class="contents-box__head">
+      <a href="/" class="medium-btn-link cancel">キャンセル</a>
+      <div class="contents-title">詳細</div>
+      <a href="#" class="medium-btn-link" id="edit_post">登録</a>
+    </div>
+
+    <div class ="contents-box-list">
+    <%= form_for(@wish, html: {name: 'edit_wish'}) do |f| %>
+      <div class="contents-box-list__item flex">
+        <%= f.label :title, "達成したいこと", class: "item-title" %>
+        <%= f.text_field :title, class: "item-field", value: @wish.title, placeholder: "例)猫と暮らしたい" %>
       </div>
-      <ul class="header-menu">
-        <li class="header-menu__item"><a class="header-menu__link">mami</a></li>
-        <li class="header-menu__item"><a class="header-menu__link">達成済み</a></li>
-      </ul>
-    </div>
-  </header>
-  <div class="main">
-    <div class="main-btn-area">
-      <a class="main-btn complete">達成</a>
-    </div>
-    <div class="main-area">
-      <div class="contents-box">
-        <div class="contents-box__head">
-          <a href="#" class="medium-btn-link cancel">キャンセル</a>
-          <div class="contents-title">詳細</div>
-          <a href="#" class="medium-btn-link">登録</a>
+      <div class="contents-box-list__item flex">
+        <%= f.label :deadline, "期限", class: "item-title" %>
+        <%= f.date_field :deadline, value: @wish.deadline, class: "item-field" %>
+      </div>
+      <div class="contents-box-list__item">
+        <%= f.label :memo, "メモ", class: "item-title memo-title" %>
+        <%= f.text_area :memo, value: @wish.memo, class: "item-field memo-height", placeholder: "500字以内で書いください" %>
+      </div>
+
+      <%= f.fields_for :small_step do |i|%>
+      <div class="contents-box-list__item">
+        <% if @wish.small_steps[0] %>
+          <div class="small-step-items">
+            <div class="small-step-items__contents">
+              <%= i.label :text1, "スモールステップ①", class: "item-title" %>
+              <%= i.text_field :text1, class: "item-field", value: @wish.small_steps[0].text,placeholder: "例)ペット可の物件を探す" %>
+              <%=i.hidden_field :small_step_id1, value:@wish.small_steps[0].id%>
+            </div>
+              <% if @wish.small_steps[0].done == true %>
+            <%= link_to "達成", small_step_path( @wish.small_steps[0].id),method: :patch, class: "small-btn small-btn__done"%>
+            <% else %>
+            <%= link_to "達成", small_step_path( @wish.small_steps[0].id),method: :patch, class: "small-btn"%>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="small-step-items">
+            <div class="small-step-items__contents">
+              <%= i.label :text1, "スモールステップ①", class: "item-title" %>
+              <%= i.text_field :text1, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
+            </div>
+            <a href="#" class="small-btn">達成</a>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="contents-box-list__item">
+        <% if @wish.small_steps[1] %>
+          <div class="small-step-items">
+            <div class="small-step-items__contents">
+              <%= i.label :text2, "スモールステップ②", class: "item-title" %>
+              <%= i.text_field :text2, class: "item-field", value: @wish.small_steps[1].text,placeholder: "例)ペット可の物件を探す" %>
+              <%=i.hidden_field :small_step_id2, value:@wish.small_steps[1].id%>
+            </div>
+            <% if @wish.small_steps[1].done == true %>
+            <%= link_to "達成", small_step_path( @wish.small_steps[1].id),method: :patch, class: "small-btn small-btn__done"%>
+            <% else %>
+            <%= link_to "達成", small_step_path( @wish.small_steps[1].id),method: :patch, class: "small-btn"%>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="small-step-items">
+            <div class="small-step-items__contents">
+              <%= i.label :text2, "スモールステップ②", class: "item-title" %>
+              <%= i.text_field :text2, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
+            </div>
+            <a href="#" class="small-btn">達成</a>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="contents-box-list__item">
+        <% if @wish.small_steps[2] %>
+          <div class="small-step-items">
+            <div class="small-step-items__contents">
+              <%= i.label :text3, "スモールステップ③", class: "item-title" %>
+              <%= i.text_field :text3, class: "item-field", value: @wish.small_steps[2].text,placeholder: "例)ペット可の物件を探す" %>
+              <%=i.hidden_field :small_step_id3, value:@wish.small_steps[2].id%>
+            </div>
+            <% if @wish.small_steps[1].done == true %>
+            <%= link_to "達成", small_step_path( @wish.small_steps[2].id),method: :patch, class: "small-btn small-btn__done"%>
+            <% else %>
+            <%= link_to "達成", small_step_path( @wish.small_steps[2].id),method: :patch, class: "small-btn"%>
+            <% end %>
+          </div>
+        <% else %>
+        <div class="small-step-items">
+          <div class="small-step-items__contents">
+            <%= i.label :text3, "スモールステップ③", class: "item-title" %>
+            <%= i.text_field :text3, class: "item-field", placeholder: "例)ペット可の物件を探す" %>
+          </div>
+          <a href="#" class="small-btn">達成</a>
         </div>
-
-        <form class="contents-box-list">
-        <ul>
-          <div class="contents-box-list__item flex">
-            <label class="item-title">達成したいこと
-            <li><input class="item-firld display" value="猫と暮らしたい"></li></label>
-          </div>
-          <div class="contents-box-list__item flex">
-            <label class="item-title">期限
-            
-            <li><input class="item-firld display" value="20XX/XX/XX"></li></label>
-          </div>
-        </ul>
-          <div class="contents-box-list__item">
-            <div class="list-items">
-              <div class="item-title">メモ
-              </div>
-              <textarea class="item-firld display memo-height">種類はこだわりなし。保護猫を引き取りたい。
-              </textarea>
-            </div>
-          </div>
-          <div class="contents-box-list__item">
-            <div class="small-step-items">
-              <div class="small-step-items__contents">
-                <label class="item-title">スモールステップ①
-                </label>
-                <br>
-                <input class="item-firld display" value="ペット可の物件を探す">
-              </div>
-              <a href="#" class="small-btn">達成
-              </a>
-            </div>
-          </div>
-           <div class="contents-box-list__item">
-            <div class="small-step-items">
-              <div class="small-step-items__contents">
-                <label class="item-title">スモールステップ①
-                </label>
-                <br>
-                <input class="item-firld display" value="ペット可の物件を探す">
-              </div>
-              <a href="#" class="small-btn">達成
-              </a>
-            </div>
-          </div>
-           <div class="contents-box-list__item">
-            <div class="small-step-items">
-              <div class="small-step-items__contents">
-                <label class="item-title">スモールステップ①
-                </label>
-                <br>
-                <input class="item-firld display" value="ペット可の物件を探す">
-              </div>
-              <a href="#" class="small-btn">達成
-              </a>
-            </div>
-          </div>
-         
-        </form>
-
+        <% end %>
       </div>
+
+      <% end %>
+    <% end %>
     </div>
   </div>
-</body>
+</div>
