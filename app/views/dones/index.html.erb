@@ -10,7 +10,7 @@
               <i class="fas fa-ellipsis-h"></i>
               <ul class="nav">
               <li class="nav__item"><%= link_to "詳細", done_path(wish), class: "nav__link" %></li>
-              <li class="nav__item"><a href="#" class="nav__link">削除</a></li>
+              <li class="nav__item"><%= link_to "削除", done_path(wish), method: :delete, class:"nav__link" %></li>
               </ul>
             </div>
             <div class="wish-panel__item">

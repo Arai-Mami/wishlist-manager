@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :wishes do
     get :complete
   end
-  resources :dones, only: [:index, :show]
+  resources :dones, only: [:index, :show, :destroy]
   resources :small_steps, only: [:update]
   root "wishes#index"
 end
