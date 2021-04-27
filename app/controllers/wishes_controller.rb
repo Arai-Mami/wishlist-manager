@@ -66,6 +66,9 @@ class WishesController < ApplicationController
     redirect_to :action => "index"
   end
 
+  def complete
+  end
+
   private
   def wish_params
     wish_params = params.require(:wish).permit(:title, :memo, :deadline).merge(user_id: current_user.id)
