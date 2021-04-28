@@ -5,10 +5,10 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         
         <div class="field">
-        <div class="devise-title-items">
-          <%= f.label :nickname, "ニックネーム", class:"item-title" %>
-          <span class="title-supplement">(最大6文字まで)</span>
-        </div>
+          <div class="devise-title-items">
+            <%= f.label :nickname, "ニックネーム", class:"item-title" %>
+            <span class="title-supplement">(最大6文字まで)</span>
+          </div>
           <%= f.text_field :nickname, autofocus: true, maxlength: "6" ,class: "devise-item-field"%>
         </div>
 
@@ -18,13 +18,13 @@
         </div>
 
         <div class="field">
-        <div class="devise-title-items">
-          <%= f.label :password, "パスワード", class:"item-title"%>
-          <% if @minimum_password_length %>
-          <span class="title-supplement">(<%= @minimum_password_length %> 文字以上)</span>
-          <% end %><br />
-        </div>
-          <%= f.password_field :password, autocomplete: "new-password" ,class: "devise-item-field"%>
+          <div class="devise-title-items">
+            <%= f.label :password, "パスワード", class:"item-title"%>
+            <% if @minimum_password_length %>
+            <span class="title-supplement">(<%= @minimum_password_length %> 文字以上)</span>
+            <% end %><br />
+          </div>
+            <%= f.password_field :password, autocomplete: "new-password" ,class: "devise-item-field"%>
         </div>
 
         <div class="field">
