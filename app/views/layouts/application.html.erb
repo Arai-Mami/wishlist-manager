@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WishlistManager</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d18240d4e8.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +15,30 @@
   </head>
 
   <body>
-    <%= yield %>
+      <header class="header">
+        <div class="header-contents wrapper">
+          <div class="header-logo">
+            <a href="/">
+            <%= image_tag 'logo.png', class: "header-logo__image"%>
+            </a>
+          </div>
+          <ul class="header-menu">
+          <% if user_signed_in? %>
+            <li class="header-menu__item user_name"><a class="header-menu__link"><%= current_user.nickname %></a>
+              <ul class="nav user-nav">
+              <li class="nav__item"><%= link_to "ユーザー編集", edit_user_registration_path ,class: "nav__link" %>
+              <li class="nav__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav__link" %>
+              </ul>
+            </li>
+            <li class="header-menu__item"><%= link_to "達成済み", dones_path, class:"header-menu__link"%></li>
+          <% end %>
+          </ul>
+        </div>
+      </header>
+
+      <main class="main">
+
+        <%= yield %>
+      </main>
   </body>
 </html>
