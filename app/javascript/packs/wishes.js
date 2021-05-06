@@ -19,5 +19,17 @@ function submitFormWitnButton() {
 
   // 関数内で定義された関数は、関数の中でしか呼び出せないという性質があるだけで、
   // 通常の関数同様に呼び出せる
+
+  let done_btns = document.querySelectorAll(".small-btn");
+  // 達成ボタン情報取得
+  done_btns.forEach(function (done_btn) {
+    done_btn.addEventListener("click", function () {
+      if (this.classList.contains("small-btn__done") == true) {
+        this.classList.remove("small-btn__done");
+      } else {
+        this.classList.add("small-btn__done");
+      }
+    });
+  });
 }
 window.addEventListener("load", submitFormWitnButton);
