@@ -1,4 +1,6 @@
 class WishesController < ApplicationController
+
+  
   def index
     @wishes = Wish.where(user_id: current_user.id, completed: false)
   end
